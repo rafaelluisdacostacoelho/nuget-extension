@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/CommandTable">
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+
+  <!-- Seção de definição dos comandos -->
+  <Commands>
+    <Groups>
+      <!-- Grupo de exemplo: define onde colocar o comando no menu de contexto da solução -->
+      <Group guid="guidMyExtensionCmdSet" id="MyGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_SOLUTIONNODE" />
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <!-- Botão/Comando de exemplo -->
+      <Button guid="guidMyExtensionCmdSet" id="MyCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidMyExtensionCmdSet" id="MyGroup"/>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Meu Comando de Exemplo</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <!-- Seção de símbolos (GUIDs e IDs) -->
+  <Symbols>
+    <GuidSymbol name="guidMyExtensionPackage" value="{188D4735-7336-44FA-90C6-95CC285EB4F1}" />
+    <GuidSymbol name="guidMyExtensionCmdSet" value="{AA17F731-AA76-4D7C-8F73-8C6A4100399E}">
+      <IDSymbol name="MyGroup" value="0x1020" />
+      <IDSymbol name="MyCommandId" value="0x0100" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
