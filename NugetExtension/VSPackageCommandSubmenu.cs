@@ -29,7 +29,7 @@ namespace NugetExtension
             // Do any initialization that requires the UI thread after switching to the UI thread.
             // Otherwise, remove the switch to the UI thread if you don't need it.
             await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
-            Command1.Initialize(this);
+            RemoveBinObjCommand.Initialize(this);
             Command2.Initialize(this);
         }
     }

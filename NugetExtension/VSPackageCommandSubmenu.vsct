@@ -19,10 +19,10 @@
       </Menus>
       
       <Buttons>
-         <Button guid="guidVSPackageCommandSubmenuCmdSet" id="Command1Id" type="Button">
+         <Button guid="guidVSPackageCommandSubmenuCmdSet" id="RemoveBinObjCommandId" type="Button">
             <Icon guid="guidImages" id="bmpPic1" />
             <Strings>
-               <ButtonText>Command1</ButtonText>
+               <ButtonText>Remove bin and obj directories</ButtonText>
             </Strings>
          </Button>
          <Button guid="guidVSPackageCommandSubmenuCmdSet" id="Command2Id" type="Button">
@@ -44,7 +44,7 @@
            The parent of a group is a menu, context menu or toolbar.
            The parent of a submenu is always a group
            The priority sets the position of the group compared to the priority of other existing groups in the menu.
-           The order is: Toolbar or Menu > MyGroupForSubmenu > MySubmenu > MyGroupForCommands > Command1Id, Command2Id
+           The order is: Toolbar or Menu > MyGroupForSubmenu > MySubmenu > MyGroupForCommands > RemoveBinObjCommandId, Command2Id
       -->
       <CommandPlacement guid="guidVSPackageCommandSubmenuCmdSet" id="MyGroupForSubmenu" priority="0xFFFF">
          <!-- The parent of the group will be the solution context menu -->
@@ -64,7 +64,7 @@
       <!-- Placement for commands.
            The parent of a command is always a group, never a menu, context menu or toolbar.
       -->
-      <CommandPlacement guid="guidVSPackageCommandSubmenuCmdSet" id="Command1Id" priority="0x0001" >
+      <CommandPlacement guid="guidVSPackageCommandSubmenuCmdSet" id="RemoveBinObjCommandId" priority="0x0001" >
          <Parent guid="guidVSPackageCommandSubmenuCmdSet" id="MyGroupForCommands"/>
       </CommandPlacement>
       <CommandPlacement guid="guidVSPackageCommandSubmenuCmdSet" id="Command2Id" priority="0x0002" >
@@ -79,8 +79,8 @@
          <IDSymbol name="MyGroupForSubmenu" value="0x1020" />
          <IDSymbol name="MyGroupForCommands" value="0x1021" />
          <IDSymbol name="MySubmenu" value="0x0100" />
-         <!-- Warning!!: Keep the values in sync with the code in Command1.cs, Command2.cs -->
-         <IDSymbol name="Command1Id" value="0x0101" />
+         <!-- Warning!!: Keep the values in sync with the code in RemoveBinObjCommand.cs, Command2.cs -->
+         <IDSymbol name="RemoveBinObjCommandId" value="0x0101" />
          <IDSymbol name="Command2Id" value="0x0102" />
       </GuidSymbol>
 
